@@ -28,6 +28,8 @@ public class GuessingGame extends JFrame {
 			newGame();
 		}
 		lblOutput.setText(message);
+		txtGuess.requestFocus();
+		txtGuess.selectAll();
 	}
 	
 	public void newGame() {
@@ -56,6 +58,12 @@ public class GuessingGame extends JFrame {
 		txtGuess.setBounds(308, 96, 37, 20);
 		getContentPane().add(txtGuess);
 		txtGuess.setColumns(10);
+		
+		txtGuess.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				checkGuess();
+			}
+		});
 		
 		JButton btnGuess = new JButton("Guess!");
 		btnGuess.addActionListener(new ActionListener() {
