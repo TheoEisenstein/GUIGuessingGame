@@ -23,8 +23,10 @@ public class GuessingGame extends JFrame {
 			message = guess + " is too low. Try again.";
 		else if (guess > theNumber)
 			message = guess + " is too high. Try again.";
-		else
-			message = guess + " is correct. You win!";
+		else {
+			message = guess + " is correct. You win! Let's play again!";
+			newGame();
+		}
 		lblOutput.setText(message);
 	}
 	
