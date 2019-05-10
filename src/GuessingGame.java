@@ -18,7 +18,10 @@ public class GuessingGame extends JFrame {
 	public void checkGuess() {
 		String guessText = txtGuess.getText();
 		String message ="";
+		
+		try {
 		int guess = Integer.parseInt(guessText);
+		
 		if(guess < theNumber)
 			message = guess + " is too low. Try again.";
 		else if (guess > theNumber)
@@ -27,9 +30,13 @@ public class GuessingGame extends JFrame {
 			message = guess + " is correct. You win! Let's play again!";
 			newGame();
 		}
-		lblOutput.setText(message);
-		txtGuess.requestFocus();
-		txtGuess.selectAll();
+		} catch (Exception e) {
+			message = "Enter a whole number between 1 and 100.";
+		} finally {
+			lblOutput.setText(message);
+			txtGuess.requestFocus();
+			txtGuess.selectAll();
+		}
 	}
 	
 	public void newGame() {
