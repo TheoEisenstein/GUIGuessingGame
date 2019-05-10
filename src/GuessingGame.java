@@ -8,6 +8,7 @@ import javax.swing.JTextField;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.Color;
 
 public class GuessingGame extends JFrame {
 	private JTextField txtGuess;
@@ -45,6 +46,10 @@ public class GuessingGame extends JFrame {
 	
 	
 	public GuessingGame() {
+		getContentPane().setFont(new Font("Tekton Pro", Font.PLAIN, 11));
+		getContentPane().setBackground(Color.LIGHT_GRAY);
+		setBackground(Color.BLACK);
+		setForeground(Color.GRAY);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setTitle("Teddy's Hi-Lo Guessing Game");
 		getContentPane().setLayout(null);
@@ -56,11 +61,13 @@ public class GuessingGame extends JFrame {
 		getContentPane().add(lblTeddysHiloGuessing);
 		
 		JLabel lblGuessANumber = new JLabel("Guess a number between 1 and 100:");
+		lblGuessANumber.setFont(new Font("Trajan Pro", Font.PLAIN, 11));
 		lblGuessANumber.setHorizontalAlignment(SwingConstants.RIGHT);
 		lblGuessANumber.setBounds(0, 96, 302, 21);
 		getContentPane().add(lblGuessANumber);
 		
 		txtGuess = new JTextField();
+		txtGuess.setFont(new Font("Trajan Pro", Font.PLAIN, 11));
 		txtGuess.setHorizontalAlignment(SwingConstants.RIGHT);
 		txtGuess.setBounds(308, 96, 37, 20);
 		getContentPane().add(txtGuess);
@@ -73,6 +80,7 @@ public class GuessingGame extends JFrame {
 		});
 		
 		JButton btnGuess = new JButton("Guess!");
+		btnGuess.setFont(new Font("Trajan Pro", Font.PLAIN, 11));
 		btnGuess.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				checkGuess();
@@ -82,6 +90,7 @@ public class GuessingGame extends JFrame {
 		getContentPane().add(btnGuess);
 		
 		lblOutput = new JLabel("Enter a number above and click Guess!");
+		lblOutput.setFont(new Font("Trajan Pro", Font.PLAIN, 11));
 		lblOutput.setHorizontalAlignment(SwingConstants.CENTER);
 		lblOutput.setBounds(0, 210, 434, 14);
 		getContentPane().add(lblOutput);
